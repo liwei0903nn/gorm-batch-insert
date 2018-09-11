@@ -2,7 +2,7 @@
 function for batch insert with gorm 利用gorm批量插入数据
 
 
-type Product struct {
+	type Product struct {
 		gorm.Model
 		Code  string
 		Price int
@@ -26,7 +26,7 @@ type Product struct {
 		product[i].Price = 2222
 	}
 
-	err = util.GormBatchInsert(db, product, nil)
+	err = util.GormBatchInsert(db, product, nil)  // nil 表示需要插入所有字段
 	if err != nil {
 		fmt.Println("error", err)
 	}
